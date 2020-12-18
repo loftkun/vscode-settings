@@ -120,8 +120,8 @@
     - とりあえず、`monospace` にしておけば、等幅なので使えそう
       - これは`MS Gothic` と同じかなあ
   - [Visual Studio Codeで等幅フォントを使う - minus9d's diary](https://minus9d.hatenablog.com/entry/2018/12/22/111047)
-    - 最近のWindows10は、モリサワの `BIZ UD ゴシック` が最初から入っている
-      - 等幅じゃないなこれ
+    - 最近のWindows10は、モリサワの `BIZ UDゴシック` が最初から入っている
+      - これも良い
     - 等幅のチェック用テーブル
 
 | あいうえお |  abcdefg   |
@@ -143,13 +143,14 @@
     - 秀丸エディタの単語補完のような動きを期待していると期待はずれ。
   - 私は `Accept Suggestion On Enter` を off にしている。Tab で決定となる。
 
-- エディタの着目箇所の背景色がやや暗いため、明るくするために以下のjsonを追加
-  - 現在行
-  - 選択文字列、及び選択文字列と一致する文字列
-- #FFFFFF の後ろの数字(アルファ値)をお好みで大きくするとハイライトが明るくなります。
-- メリットは以下
-  - 現在行(カーソル位置)の視認性 UP
-  - 文字列選択により一致する文字列の視認性 UP
+- エディタの着目箇所の背景色がやや暗いため、明るくするために以下の`workbench.colorCustomizations`を追加
+  - 設定項目
+    - 現在行
+    - 選択文字列、及び選択文字列と一致する文字列
+  - #FFFFFF の後ろの数字(アルファ値)をお好みで大きくするとハイライトが明るくなります。
+  - メリット
+    - 現在行(カーソル位置)の視認性 UP
+    - 文字列選択により一致する文字列の視認性 UP
 
 ```json
     "workbench.colorCustomizations": {
@@ -165,7 +166,6 @@
 
 ```json
     "[markdown]":  {
-        "editor.wordWrap": "on",
         "editor.quickSuggestions": true,
         "editor.snippetSuggestions": "top"
     }
@@ -236,7 +236,34 @@ date を日付に変換する。常時作業ログを書きながら作業して
   - `Markdown-toc: Depth From` を`2`にする
 - [Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)
 - [Replace Rules](https://marketplace.visualstudio.com/items?itemName=bhughes339.replacerules)
-  - TODO: 私のルールを書く予定
+  - 私のルールは以下
+
+```json
+    "replacerules.rules": {
+        "Sorround code": {
+            "find": "(.*)",
+            "replace": "```log\n$1\n```",
+            "flags" : "gms"
+        },
+        "Remove blank lines": {
+            "find": "^\\n",
+            "replace": ""
+        },
+        "Remove trailing and leading whitespace": {
+            "find": "^\\s*(.*?)\\s*$",
+            "replace": "$1"
+        },
+    },
+    "replacerules.rulesets": {
+        "Remove lots of stuff": {
+            "rules": [
+                "Remove trailing and leading whitespace",
+                "Remove blank lines"
+            ]
+        }
+    },
+```
+
 - [Draw.io Integration](https://marketplace.visualstudio.com/items?itemName=hediet.vscode-drawio)
   - [VSCode で Draw.io が使えるようになったらしい！ - Qiita](https://qiita.com/riku-shiru/items/5ab7c5aecdfea323ec4e)
   - `xxx.drawio.svg` という画像ファイル名にしておくとこのExtensionに紐づく
