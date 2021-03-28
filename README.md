@@ -234,6 +234,13 @@ date を日付に変換する。常時作業ログを書きながら作業して
     - [【VSCode】Markdown で書いたブログに目次を付ける！（Markdown TOC） | Developers.IO](https://dev.classmethod.jp/articles/vscode-markdown-toc-for-blog/)
       - `Files: Eol` を `auto` から 改行に変える
   - `Markdown-toc: Depth From` を`2`にする
+- [Table Formatter - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=shuworks.vscode-table-formatter)
+  - よく使う記号は以下に設定すると横幅がずれない
+
+```json
+"tableformatter.common.explicitFullwidthChars": ["○", "◎", "✕", "※"]
+```
+
 - [Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)
 - [Replace Rules](https://marketplace.visualstudio.com/items?itemName=bhughes339.replacerules)
   - 私のルールは以下
