@@ -122,11 +122,13 @@
   - [Visual Studio Codeで等幅フォントを使う - minus9d's diary](https://minus9d.hatenablog.com/entry/2018/12/22/111047)
     - 最近のWindows10は、モリサワの `BIZ UDゴシック` が最初から入っている
       - これも良い
-    - 等幅のチェック用テーブル
+    - 等幅のチェック用テーブル。以下テーブルの縦棒がずれないフォントを選んでおけばOK。
 
+```markdown
 | あいうえお |  abcdefg   |
 | ---------- | ---------- |
 | abcdefg    | あいうえお |
+```
 
 - `Editor: Render Whitespace` を `all`
 - `Terminal › Integrated: Scrollback`
