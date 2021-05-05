@@ -36,6 +36,8 @@
   - [x] Git Graph
     - 私は Git History ではなく Git Graph にしてる
     - 左下にボタンが増えるので使いやすい(Git Hisotry は右上にボタンが増える)からであり、機能的な比較はしてない
+    - workspace配下のリポジトリをスキャンする深さ設定は `git-graph.maxDepthOfRepoSearch`
+      - workspace配下に複数Gitリポジトリがある場合に備えて`2`などと設定しておくと吉
 - [x] Bracket Pair Colorizer
 - [ ] Settings Sync
   - 職場だと UPLOAD は NG なので入れてない
